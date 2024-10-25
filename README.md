@@ -136,7 +136,6 @@ The project implements clean architecture with four main layers:
 4. **Presentation Layer**
     - Manages UI components
     - Handles state management
-    - Implements navigation
 
 Each layer has its own dependencies file for better organization and dependency management.
 
@@ -145,7 +144,6 @@ Each layer has its own dependencies file for better organization and dependency 
 1. Launch the application
 2. On the products page, tap the "Get Items" button
 3. Scroll through the paginated list of products
-4. Images are automatically cached for better performance
 
 ## Testing
 
