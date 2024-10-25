@@ -103,7 +103,6 @@ The project uses several key dependencies:
 - `provider`: Widget-level state management
 
 For testing:
-- `bloc_test`: Testing BLoC components
 - `mocktail`: Mocking for tests
 - `test`: Dart testing framework
 
