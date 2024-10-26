@@ -1,6 +1,7 @@
 # Flutter Demo Project
 
-A demonstration Flutter application showcasing asynchronous programming, JSON handling, and state management using BLoC pattern. The app fetches and displays a paginated list of products from the DummyJSON API.
+A demonstration Flutter application showcasing asynchronous programming, JSON handling, and state management using BLoC
+pattern. The app fetches and displays a paginated list of products from the DummyJSON API.
 
 ## Features
 
@@ -61,33 +62,32 @@ The project follows clean architecture principles with the following structure:
 
 ```
 lib/
-├── core/                          # Core functionality and utilities
-│   ├── di/                        # Dependency injection setup
-│   ├── exception/                 # Custom exceptions
-│   ├── network/                   # Network related utilities
-│   ├── core_dependencies.dart     # Core layer dependencies
+├── core/                         # Core functionality and utilities
+│   ├── di/                       # Dependency injection setup
+│   ├── exception/                # Custom exceptions
 │   ├── logger.dart               # Logging functionality
 │   └── result.dart               # Result pattern implementation
 │
 ├── data/                         # Data layer
-│   ├── data_model/              # Data transfer objects
-│   ├── datasource/              # Remote and local data sources
-│   ├── repository/              # Repository implementations
-│   └── data_dependencies.dart   # Data layer dependencies
+│   ├── data_model/               # Data transfer objects
+│   ├── datasource/               # Remote and local data sources
+│   ├── network/                  # Network interface and default implementation
+│   ├── repository/               # Repository implementations
+│   └── data_dependencies.dart    # Data layer dependencies
 │
-├── domain/                      # Domain layer
-│   ├── entity/                 # Business entities
-│   ├── repository/             # Repository interfaces
-│   ├── use_case/              # Business logic use cases
-│   └── domain_dependencies.dart # Domain layer dependencies
+├── domain/                       # Domain layer
+│   ├── entity/                   # Business entities
+│   ├── repository/               # Repository interfaces
+│   ├── use_case/                 # Business logic use cases
+│   └── domain_dependencies.dart  # Domain layer dependencies
 │
-├── presentation/               # Presentation layer
-│   ├── common/                # Shared widgets and utilities
-│   ├── page/                  # Application pages
-│   ├── demo_app.dart          # Application main widget
+├── presentation/                 # Presentation layer
+│   ├── common/                   # Shared widgets and utilities
+│   ├── page/                     # Application pages
+│   ├── demo_app.dart             # Application main widget
 │   └── presentation_dependencies.dart # Presentation layer dependencies
 │
-└── main.dart                  # Application entry point
+└── main.dart                     # Application entry point
 ```
 
 ## Dependencies
@@ -117,20 +117,25 @@ The application integrates with the DummyJSON API:
 The project implements clean architecture with four main layers:
 
 1. **Core Layer**
-    - Handles cross-cutting concerns
-    - Implements dependency injection
-    - Manages error handling and logging
-    - Provides network utilities
+    - Contains only pure, business-agnostic utilities and patterns
+    - Implements dependency injection setup
+    - Provides custom exception types
+    - Implements Result pattern for error handling
+    - Contains logging infrastructure
+    - No knowledge of external protocols or implementations
 
 2. **Data Layer**
     - Implements data sources
     - Handles data models and mapping
+    - Contains all network-related code (interfaces and implementations)
     - Implements repository pattern
+    - Encapsulates external data concerns
 
 3. **Domain Layer**
     - Contains business entities
     - Defines repository interfaces
     - Implements use cases
+    - Pure business logic with no external dependencies
 
 4. **Presentation Layer**
     - Manages UI components
