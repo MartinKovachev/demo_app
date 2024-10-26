@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:demo_app/core/exception/app_exception.dart';
 import 'package:demo_app/core/exception/no_internet_connection_app_exception.dart';
 import 'package:demo_app/core/exception/server_error_app_exception.dart';
-import 'package:demo_app/core/network/http_client.dart';
 import 'package:demo_app/core/result.dart';
+import 'package:demo_app/data/network/http_client.dart';
 import 'package:dio/dio.dart';
 
 typedef InvokeCallback = Future<Response<dynamic>> Function();

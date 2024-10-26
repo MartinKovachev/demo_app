@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:demo_app/core/core_dependencies.dart';
 import 'package:demo_app/core/di/default_di_registrar.dart';
 import 'package:demo_app/core/di/dependencies.dart';
 import 'package:demo_app/core/di/di_registrar.dart';
@@ -33,7 +32,6 @@ Future<void> _runAppZonedGuarded() async {
 
 Future<void> _registerDependencies(DIRegistrar di) async {
   final dependencies = <Dependencies>[
-    CoreDependencies(),
     DomainDependencies(),
     DataDependencies(),
     PresentationDependencies(),

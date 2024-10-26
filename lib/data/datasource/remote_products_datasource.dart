@@ -1,11 +1,12 @@
 import 'package:demo_app/core/exception/app_exception.dart';
-import 'package:demo_app/core/network/http_client.dart';
 import 'package:demo_app/core/result.dart';
 import 'package:demo_app/data/data_model/product_data_model.dart';
 import 'package:demo_app/data/data_model/products_data_model.dart';
+import 'package:demo_app/data/network/http_client.dart';
 
 class RemoteProductsDataSource {
-  const RemoteProductsDataSource({required HttpClient httpClient}) : _httpClient = httpClient;
+  const RemoteProductsDataSource({required HttpClient httpClient})
+      : _httpClient = httpClient;
 
   final HttpClient _httpClient;
 
